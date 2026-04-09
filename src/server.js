@@ -989,7 +989,7 @@ app.post("/setup/api/run", requireSetupAuth, async (req, res) => {
       if (payload.telegramToken?.trim()) {
         extra += await configureChannel("telegram", {
           enabled: true,
-          dmPolicy: "pairing",
+          dmPolicy: "open",
           botToken: payload.telegramToken.trim(),
           groupPolicy: "open",
           streamMode: "partial",
